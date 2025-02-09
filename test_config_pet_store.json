@@ -1,0 +1,136 @@
+{
+  "baseurl": "https://petstore.swagger.io/v2",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "headers_form_data":
+  {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  "img_file_path": "C:\\Projects\\OldProjects\\myrepo_3rdFeb\\img",
+  "valid_status": "available",
+  "invalid_status": "abcd123",
+  "valid_id": 90,
+  "invalid_id":"abcdf" ,
+  "form_data_name": "Bruno",
+  "form_data_status": "unavail`able",
+  "Pets": {
+    "Pet1": {
+      "id": "101",
+      "name": "Tommy",
+      "status": "available"
+    },
+    "Pet2": {
+      "id": "201",
+      "name": "Bruno",
+      "status": "available"
+    },
+    "Pet3": {
+      "id": "301",
+      "name": "Shadow",
+      "status": "available"
+    },
+    "Pet4": {
+      "id": "401",
+      "name": "Saphie",
+      "status": "available"
+    },
+      "Pet5": {
+      "id": "501",
+      "name": "Ellie",
+      "status": "available"
+    }
+  },
+  "Users": {
+    "User1": {
+      "id": 1101,
+      "username": "Richard",
+      "firstName": "Richard",
+      "lastName": "Smith",
+      "email": "richard.sim@gmail.com",
+      "password": "Richard01",
+      "phone": "9876123451",
+      "userStatus": 0
+    },
+    "User2": {
+      "id": 1102,
+      "username": "Ron",
+      "firstName": "Ron",
+      "lastName": "Howling",
+      "email": "ron.howling@gmail.com",
+      "password": "Ron01",
+      "phone": "3232324432",
+      "userStatus": 0
+    },
+    "User3": {
+      "id": 1103,
+      "username": "Dan",
+      "firstName": "Dan",
+      "lastName": "Murphy",
+      "email": "dan.murphy@gmail.com",
+      "password": "dan@01",
+      "phone": "6754321347",
+      "userStatus": 0
+    },
+    "User4": {
+      "id": 1104,
+      "username": "Sonia",
+      "firstName": "Sonia",
+      "lastName": "Sheth",
+      "email": "sonia.sheth@gmail.com",
+      "password": "sonia@01",
+      "phone": "1298192345",
+      "userStatus": 0
+    },
+    "User5": {
+      "id": 1105,
+      "username": "Monika",
+      "firstName": "Monike",
+      "lastName": "Gawde",
+      "email": "monika.gawde@gmail.com",
+      "password": "monik@01",
+      "phone": "1298192345",
+      "userStatus": 0
+    },
+    "User6": {
+      "id": 1106,
+      "username": "Isha",
+      "firstName": "Isha",
+      "lastName": "Mukharji",
+      "email": "isha.mukharji@gmail.com",
+      "password": "isha@01",
+      "phone": "1298192345",
+      "userStatus": 0
+    },
+    "new":{
+      "email": "monika.gawde24@gmail.com",
+      "phone": "9298192345"
+    }
+  },
+  "Orders": {
+    "Order1": {
+      "id": 91,
+      "petId": 101,
+      "quantity": 50,
+      "shipDate": "2025-02-06T04:13:45.250Z",
+      "status": "placed",
+      "complete": true
+    },
+    "Order2": {
+      "id": 92,
+      "petId": 102,
+      "quantity": 50,
+      "shipDate": "2025-02-06T04:13:45.250Z",
+      "status": "placed",
+      "complete": true
+    },
+      "Order3": {
+      "id": 93,
+      "petId": 103,
+      "quantity": 50,
+      "shipDate": "2025-02-06T04:13:45.250Z",
+      "status": "placed",
+      "complete": true
+    }
+  }
+}
