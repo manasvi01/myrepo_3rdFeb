@@ -1,6 +1,4 @@
 from behave import given, when, then, step
-import requests
-import json
 from API_Client import *
 from Test_Data_Extractor import *
 api_client = API_Client()
@@ -9,16 +7,9 @@ test_data = TestDataExtractor()
 @given(u'List of users with given input array is created(create with list)')
 def step_impl(context):
     context.config_users = test_data.get_users_test_data()
-    # print(context.config_users)
-    payload = "["
+    payload = list()
     for row in context.table:
-        print(row["Users"])
-        payload = payload + str(context.config_users[row["Users"]])+","
-    payload=payload[:-1]+"]"
-        # payload =  str(context.config_users[row["Users"]])+","
-
-    payload = json.dumps(payload)
-    print("payload" + payload)
+        payload.append(context.config_users[row["Users"]])
     context.response_full = api_client.send_request("POST", f"/user/createWithList", payload=payload)
     context.response = context.response_full.json()
     context.response_status_code = context.response_full.status_code
@@ -26,11 +17,9 @@ def step_impl(context):
 @given(u'List of users with given input array is created(create with array)')
 def step_impl(context):
     context.config_users = test_data.get_users_test_data()
-    payload = "["
+    payload = list()
     for row in context.table:
-        payload = payload + str(context.config_users[row["Users"]]) + ","
-    payload = payload[:-1] + "]"
-    payload = json.dumps(payload)
+        payload.append(context.config_users[row["Users"]])
     context.response_full = api_client.send_request("POST", f"/user/createWithArray", payload=payload)
     context.response = context.response_full.json()
     context.response_status_code = context.response_full.status_code
@@ -42,10 +31,8 @@ def step_impl(context, user):
     context.response = context.response_full.json()
     context.response_status_code = context.response_full.status_code
 
-@then(u'{user} details should be displayed')
+@then(u'User {user} details should be displayed')
 def step_impl(context, user):
-    # user1 = context.config_users[user]
-    print(context.response)
     for i in context.response:
         assert context.config_users[user][i]==context.response[i], f"{user} details not displayed"
 
@@ -57,8 +44,6 @@ def step_impl(context, user):
     context.response_full = api_client.send_request("GET", f"/user/login", params={"username": username, "password": password})
     context.response = context.response_full.json()
     context.response_status_code = context.response_full.status_code
-
-
 
 
 @step(u'{user5} is updated with {user6} details')
@@ -75,14 +60,8 @@ def step_impl(context, user5, user6):
 
 @then(u'User {user} details should not be displayed')
 def step_impl(context, user):
-    # user1 = context.config_users[user]
-    # if str(context.response_status_code) == "404":
-    #     print(f"{user} details are not present")
-    # else:
         c=0
         for i in context.response:
-            print(context.response)
-            print(context.config_users[user])
             if context.response[i] != context.config_users[user][i]:
                 c=0
                 break
@@ -110,8 +89,7 @@ def step_impl(context, user):
     username = context.config_users[user]["username"]
     context.response_full = api_client.send_request("DELETE", f"/user/{username}")
     context.response_status_code = context.response_full.status_code
-    print(username)
-    print(context.response_status_code)
+
 
 @step("All the users from test data are deleted if present")
 def step_imp(context):

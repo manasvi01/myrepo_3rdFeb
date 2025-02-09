@@ -3,9 +3,13 @@
   "headers": {
     "Content-Type": "application/json"
   },
-  "headers_form_data":
+  "headers_form_data_urlencoded":
   {
     "Content-Type": "application/x-www-form-urlencoded"
+  },
+    "headers_form_data":
+  {
+    "Authorization": "Bearer YOUR_ACCESS_TOKEN"
   },
   "img_file_path": "C:\\Projects\\OldProjects\\myrepo_3rdFeb\\img",
   "valid_status": "available",

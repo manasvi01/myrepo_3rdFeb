@@ -18,7 +18,7 @@ Feature:User
      Then Status Code should be 200
      When Get User5 details by username
      Then Status Code should be 200
-      And User5 details should be displayed
+      And User User5 details should be displayed
 
     Given User5 is logged in
      Then Status Code should be 200

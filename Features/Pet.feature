@@ -9,38 +9,53 @@ Feature:Regression Pet store
           | Pet3   |
           | Pet4   |
      Then Status Code should be 200
-     When Get Pet1 details by Pet1 ID
+     When Get Pet Pet1 details by Pet1 ID
      Then Status Code should be 200
       And Pet Pet1 details should be displayed
 
-    Given Get Pet2 details by Pet2 ID
+    Given Get Pet Pet2 details by Pet2 ID
       And Update Pet2 ID with valid_id
      Then Status Code should be 200
-     When Get Pet2 details by valid_id
+     When Get Pet Pet2 details by valid_id
      Then Status Code should be 200
-     Then Updated Pet2 details should be displayed
+      And Updated Pet2 details should be displayed
 
-    Given Get Pet4 details by Pet4 ID
+    Given Get Pet Pet4 details by Pet4 ID
      Then Status Code should be 200
      When Update Pet4 ID with invalid_id
-     Then Status Code should be 404
-     When Get Pet4 details by Pet4 ID
+     Then Status Code should be 500
+     When Get Pet Pet4 details by Pet4 ID
      Then Status Code should be 200
       And Pet4 ID should not get updated
+     When Get Pet Pet4 details by invalid_id
+     Then Status Code should be 404
 
+    Given Get Pet Pet3 details by Pet3 ID
+     Then Status Code should be 200
     Given Delete Pet3 by Pet3 ID
-      And Get Pet3 details by Pet3 ID
+     Then Status Code should be 200
+      And Get Pet Pet3 details by Pet3 ID
+     Then Status Code should be 404
      Then Pet3 should get deleted
 
     Given Perform Form Update on Pet4 with name as "Bruno" and status as "Unavailable"
-      And Get Pet4 details by Pet4 ID
-     Then Pet4 details should be correct
+     Then Status Code should be 200
+     When Get Pet Pet4 details by Pet4 ID
+     Then Status Code should be 200
+      And Pet4 details should be correct
 #
     Given Find Pets by valid_status
-     Then All the Pet details with valid_status should be displayed
+     Then Status Code should be 200
+      And All the Pet details with valid_status should be displayed
 #
     Given Find Pets by invalid_status
-     Then Pet details with invalid_status should not be displayed
+    Then Status Code should be 200
+     And Pet details with invalid_status should not be displayed
+
+    Given Image is uploaded to Pet1
+    Then Status Code should be 200
+
+
 
 
 
