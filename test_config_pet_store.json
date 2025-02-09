@@ -11,7 +11,8 @@
   {
     "Authorization": "Bearer YOUR_ACCESS_TOKEN"
   },
-  "img_file_path": "C:\\Projects\\OldProjects\\myrepo_3rdFeb\\img",
+  "allure_results":"",
+  "img_file_path": "C:\\Projects\\OldProjects\\myrepo_3rdFeb\\img\\Bruno.jpg",
   "valid_status": "available",
   "invalid_status": "abcd123",
   "valid_id": 90,
