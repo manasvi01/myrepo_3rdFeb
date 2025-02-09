@@ -1,5 +1,5 @@
 @wipmanasvi
-Feature:User
+Feature:Regression User
  Scenario: Operations about user
     Given All the users from test data are deleted if present
     Given List of users with given input array is created(create with list)

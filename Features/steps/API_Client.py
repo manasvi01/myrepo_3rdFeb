@@ -1,10 +1,7 @@
 import requests
-import json
 from Test_Data_Extractor import *
 class API_Client:
     def __init__(self):
-        # with open("C:\\Projects\\OldProjects\\myrepo_3rdFeb\\test_config_pet_store.json", "r") as file:
-        #     self.config = json.load(file)
         test_data = TestDataExtractor()
         self.config = test_data.get_data_from_test_data()
         self.baseurl = self.config["baseurl"]

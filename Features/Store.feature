@@ -1,5 +1,5 @@
-
-Feature: Store
+@wipmanasvi
+Feature: Regression Store
  Scenario: Searching, placing and deleting purchase orders and Getting pet inventory status
     Given Get Pet Inventories status
      Then Status Code should be 200

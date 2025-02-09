@@ -1,0 +1,6 @@
+behave
+requests
+pyyaml
+jsonschema
+json
+allure-behave
