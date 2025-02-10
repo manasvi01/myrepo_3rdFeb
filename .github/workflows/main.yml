@@ -29,6 +29,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y allure
 
+      - name: Run Behave Tests
+        run: behave --tags=-@skip  # Run all tests except those tagged with @skip
+
       - name: Run Behave Tests with Allure
         run: |
           behave -f allure_behave.formatter:AllureFormatter -o allure_results ./features
