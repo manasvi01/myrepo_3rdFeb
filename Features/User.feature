@@ -6,13 +6,13 @@ Feature:Regression User
           | Users |
           | User1 |
           | User2 |
-     Then Status code should be 200
+     Then Status Code should be 200
 
     Given List of users with given input array is created(create with array)
           | Users |
           | User3 |
           | User4 |
-     Then Status code should be 200
+     Then Status Code should be 200
 
     Given User5 is created
      Then Status Code should be 200

@@ -1,4 +1,5 @@
 import json
+
 def before_scenario(context, scenario):
     print(f"Starting Regression scenario: {scenario.name}")
     context.response={}

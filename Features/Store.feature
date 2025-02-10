@@ -7,9 +7,9 @@ Feature: Regression Store
 
     Given Place following orders from test data
           | orders   |
-          | order1   |
-          | order2   |
-          | order3   |
+          | Order1   |
+          | Order2   |
+          | Order3   |
      Then Status Code should be 200
 #
     Given Find purchase Order1 by Order1 ID

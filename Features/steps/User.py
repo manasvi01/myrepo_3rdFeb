@@ -1,8 +1,10 @@
 from behave import given, when, then, step
 from API_Client import *
 from Test_Data_Extractor import *
+from Common import *
 api_client = API_Client()
 test_data = TestDataExtractor()
+
 
 @given(u'List of users with given input array is created(create with list)')
 def step_impl(context):
